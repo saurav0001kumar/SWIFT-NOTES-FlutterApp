@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:keepnotesapp/models/note.dart';
-import 'package:keepnotesapp/utils/database_helper.dart';
-import 'package:keepnotesapp/screens/note_detail.dart';
+import 'package:swiftnotesapp/models/note.dart';
+import 'package:swiftnotesapp/utils/database_helper.dart';
+import 'package:swiftnotesapp/screens/note_detail.dart';
 import 'package:sqflite/sqflite.dart';
 
 
@@ -202,7 +202,7 @@ class NoteListState extends State<NoteList> {
 			elevation: 10,
 			backgroundColor: Colors.white70,
 			title: Text("About App!"),
-			content: Text("Swift Notes Version-1.0 . Thanks for using this app. For any help, contact developer at : https://saurav0001kumar.ml"),
+			content: Text("Swift Notes Version-1.0 . Thanks for using this app. For any help or feedback, contact the developer at 'saurav0001kumar@gmail.com' or Visit: https://saurav0001kumar.ml"),
 		);
 		showDialog(
 				context: context,

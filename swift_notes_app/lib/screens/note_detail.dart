@@ -1,7 +1,6 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:keepnotesapp/models/note.dart';
-import 'package:keepnotesapp/utils/database_helper.dart';
+import 'package:swiftnotesapp/models/note.dart';
+import 'package:swiftnotesapp/utils/database_helper.dart';
 import 'package:intl/intl.dart';
 
 class NoteDetail extends StatefulWidget {
@@ -21,6 +20,7 @@ class NoteDetail extends StatefulWidget {
 class NoteDetailState extends State<NoteDetail> {
 
 	static var _priorities = ['High','Normal', 'Low'];
+	var formkey=GlobalKey<FormState>();
 
 	DatabaseHelper helper = DatabaseHelper();
 
@@ -68,7 +68,17 @@ class NoteDetailState extends State<NoteDetail> {
 			    	// First element
 						Padding(
 							padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-							child: TextField(
+							child:
+							Form(
+								key: formkey,
+								child: TextFormField(
+
+								validator: (String inputvalue){
+									if(inputvalue.isEmpty)
+									{
+										return "*Please enter a Title. It can't be empty!";
+									}
+								},
 								controller: titleController,
 								style: textStyle,
 								onChanged: (value) {
@@ -77,14 +87,15 @@ class NoteDetailState extends State<NoteDetail> {
 								},
 								decoration: InputDecoration(
 										prefixIcon: Icon(Icons.title),
-										labelText: 'Title',
+										labelText: 'Title *',
 										labelStyle: textStyle,
 										hintText: "Title of your Note",
 										border: OutlineInputBorder(
 												borderRadius: BorderRadius.circular(5.0)
 										)
 								),
-							),
+							),),
+
 						),
 
 				    // Second Element
@@ -169,8 +180,12 @@ class NoteDetailState extends State<NoteDetail> {
 									    ),
 									    onPressed: () {
 									    	setState(() {
-									    	  debugPrint("Save button clicked");
-									    	  _save();
+									    		if(formkey.currentState.validate())
+									    			{
+															debugPrint("Save button clicked");
+															_save();
+														}
+
 									    	});
 									    },
 								    ),

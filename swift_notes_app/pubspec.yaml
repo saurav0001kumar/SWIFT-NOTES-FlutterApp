@@ -1,5 +1,5 @@
-name: keepnotesapp
-description: A new Flutter application to keep important notes.
+name: swiftnotesapp
+description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -26,7 +26,6 @@ dependencies:
   sqflite: any
   path_provider: any
   intl: ^0.16.1
-
 
 flutter_icons:
   android: "launcher_icon"

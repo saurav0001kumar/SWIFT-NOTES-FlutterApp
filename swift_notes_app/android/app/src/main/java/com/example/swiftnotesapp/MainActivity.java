@@ -1,4 +1,4 @@
-package ml.saurav0001kumar.keepnotesapp;
+package com.example.swiftnotesapp;
 
 import io.flutter.embedding.android.FlutterActivity;
 

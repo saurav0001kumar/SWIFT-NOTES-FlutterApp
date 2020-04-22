@@ -1,6 +1,6 @@
-# keepnotesapp
+# swiftnotesapp
 
-A new Flutter application for keeping notes.
+A new Flutter application.
 
 ## Getting Started
 
