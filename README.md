@@ -1,2 +1,2 @@
 # SWIFT NOTES FlutterApp
-A note keeper app using Flutter to save important notes.
+A simple note keeper android application to save important notes using Flutter.
